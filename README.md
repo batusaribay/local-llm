@@ -2,15 +2,15 @@
 
 Run uncensored LLMs locally with Ollama.
 
-![Screenshot](assets/screenshot.png)
+![ascii-art](assets/ascii-art.png)
 
 ## How it works
 
-1. Check if Ollama is installed (prompt to download if not)
-2. List installed and available uncensored models
-3. Switch between models
-4. Chat with selected model
-5. Save last used model for next session
+1. On startup, checks if the `ollama` Python client can reach a local Ollama instance; if not, prompts to open the download page
+2. Loads model metadata from `models.json` and user preferences (last model, response color) from `config.json`
+3. Runs a REPL loop: `/` prefixed input is parsed as a command (switch, install, colors, etc.), anything else is sent as a chat message
+4. Chat messages are streamed via `ollama.chat(..., stream=True)`, printing each token as it arrives instead of waiting for the full response
+5. Any state changes (model switch, color change) are persisted back to `config.json` immediately
 
 ## Advantages
 

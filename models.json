@@ -1,0 +1,48 @@
+{
+  "Fully uncensored": [
+    {
+      "name": "llama2-uncensored",
+      "desc": "Uncensored Llama 2 model by George Sung and Jarrad Hope.",
+      "sizes": ["7b", "70b"]
+    }
+  ],
+  "Partially uncensored": [
+    {
+      "name": "dolphin-mistral",
+      "desc": "Uncensored Dolphin model based on Mistral, excels at coding.",
+      "sizes": ["7b"]
+    }
+  ],
+  "Unverified": [
+    {
+      "name": "wizardlm-uncensored",
+      "desc": "Uncensored version of Wizard LM model.",
+      "sizes": ["13b"]
+    },
+    {
+      "name": "wizard-vicuna-uncensored",
+      "desc": "Wizard Vicuna Uncensored based on Llama 2 uncensored.",
+      "sizes": ["7b", "13b", "30b"]
+    },
+    {
+      "name": "dolphincoder",
+      "desc": "Uncensored Dolphin variant, excels at coding, based on StarCoder2.",
+      "sizes": ["7b", "15b"]
+    },
+    {
+      "name": "dolphin-phi",
+      "desc": "Uncensored Dolphin model based on Microsoft Research Phi.",
+      "sizes": ["2.7b"]
+    },
+    {
+      "name": "dolphin-mixtral",
+      "desc": "Uncensored Mixtral variant, excels at coding tasks.",
+      "sizes": ["8x7b", "8x22b"]
+    },
+    {
+      "name": "everythinglm",
+      "desc": "Uncensored Llama2 based model with 16K context window.",
+      "sizes": ["13b"]
+    }
+  ]
+}
