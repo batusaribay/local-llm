@@ -4,9 +4,22 @@ import webbrowser
 import sys
 import re
 import json
+from pathlib import Path
 from rich.console import Console
 
 console = Console()
+
+
+def get_config_path() -> Path:
+    if os.name == "nt":
+        base = Path(os.environ.get("APPDATA", Path.home() / "AppData" / "Roaming"))
+    else:
+        base = Path(os.environ.get("XDG_CONFIG_HOME", Path.home() / ".config"))
+    return base / "uncensored-llm" / "config.json"
+
+
+CONFIG_PATH = get_config_path()
+MODELS_PATH = Path(__file__).parent / "models.json"
 
 ASCII_ART = r"""                                                   _        _ _           
                                                   | |      | | |          
@@ -47,10 +60,10 @@ def print_banner() -> None:
 
 def load_models() -> dict:
     try:
-        with open("models.json", "r") as f:
+        with open(MODELS_PATH, "r") as f:
             return json.load(f)
     except FileNotFoundError:
-        print("Error: models.json not found\n")
+        print(f"Error: models.json not found at {MODELS_PATH}\n")
         sys.exit(1)
     except json.JSONDecodeError:
         print("Error: models.json is invalid\n")
@@ -59,14 +72,15 @@ def load_models() -> dict:
 
 def load_config() -> dict:
     try:
-        with open("config.json", "r") as f:
+        with open(CONFIG_PATH, "r") as f:
             return json.load(f)
     except (FileNotFoundError, json.JSONDecodeError):
-        return {"last_used_model": None, "response_color": "white"}
+        return {"last_used_model": None, "response_color": "yellow"}
 
 
 def save_config(config: dict) -> None:
-    with open("config.json", "w") as f:
+    CONFIG_PATH.parent.mkdir(parents=True, exist_ok=True)
+    with open(CONFIG_PATH, "w") as f:
         json.dump(config, f, indent=2)
 
 
@@ -157,7 +171,7 @@ def main() -> None:
     uncensored_models = load_models()
     config = load_config()
     model = get_last_used_model(config)
-    response_color = config.get("response_color", "white")
+    response_color = config.get("response_color", "yellow")
 
     print_banner()
     should_exit = False

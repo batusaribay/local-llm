@@ -16,6 +16,9 @@ dependencies = [
 [project.scripts]
 uncensored-llm = "uncensored_llm:main"
 
+[tool.uv.build-backend]
+data-files = { "uncensored_llm" = ["models.json"] }
+
 [build-system]
 requires = ["uv_build>=0.12.5,<0.13.0"]
 build-backend = "uv_build"
