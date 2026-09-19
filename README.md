@@ -2,9 +2,6 @@
 
 Local LLM runner.
 
-![Screenshot](assets/ascii-art.png)
-
-
 ## How it works
 
 1. On startup, checks if the `ollama` Python client can reach a local Ollama instance; if not, prompts to open the download page
