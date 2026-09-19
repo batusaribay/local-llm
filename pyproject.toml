@@ -1,11 +1,11 @@
 [project]
-name = "uncensored-llm"
+name = "local-llm"
 version = "1.0.1"
-description = "Add your description here"
+description = "Local LLM runner"
 readme = "README.md"
 license = {text = "MIT"}
 authors = [
-    { name = "p4p2r0", email = "294768138+p4p2r0@users.noreply.github.com" }
+    { name = "batusaribay", email = "294768138+p4p2r0@users.noreply.github.com" }
 ]
 requires-python = ">=3.13"
 dependencies = [
