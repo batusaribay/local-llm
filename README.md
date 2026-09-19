@@ -1,5 +1,8 @@
 # local-llm
 
+![Screenshot](assets/ascii-art.png)
+
+
 Local LLM runner.
 
 ## How it works
