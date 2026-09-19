@@ -1,8 +1,6 @@
-# uncensored-llm
+# local-llm
 
-Run uncensored LLMs locally with Ollama.
-
-![ascii-art](assets/ascii-art.png)
+A local LLM runner.
 
 ## How it works
 
@@ -35,11 +33,11 @@ Run uncensored LLMs locally with Ollama.
 Requirements: [`uv`](https://docs.astral.sh/uv/)
 
 ```bash
-uv tool install git+https://github.com/batusaribay/uncensored-llm
+uv tool install git+https://github.com/batusaribay/local-llm
 ```
 
 ```bash
-uncensored-llm
+local-llm
 ```
 
 ## Disclaimer
