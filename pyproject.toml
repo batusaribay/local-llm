@@ -5,7 +5,7 @@ description = "Local LLM runner"
 readme = "README.md"
 license = {text = "MIT"}
 authors = [
-    { name = "batusaribay", email = "294768138+p4p2r0@users.noreply.github.com" }
+    { name = "batusaribay", email = "batusaribay@gmail.com" }
 ]
 requires-python = ">=3.13"
 dependencies = [
@@ -14,10 +14,11 @@ dependencies = [
 ]
 
 [project.scripts]
-uncensored-llm = "uncensored_llm:main"
+local-llm = "local_llm:main"
+uncensored-llm = "local_llm:main"
 
 [tool.uv.build-backend]
-data-files = { "uncensored_llm" = ["models.json"] }
+data-files = { "local_llm" = ["models.json"] }
 
 [build-system]
 requires = ["uv_build>=0.12.5,<0.13.0"]

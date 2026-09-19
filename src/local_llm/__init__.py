@@ -15,19 +15,17 @@ def get_config_path() -> Path:
         base = Path(os.environ.get("APPDATA", Path.home() / "AppData" / "Roaming"))
     else:
         base = Path(os.environ.get("XDG_CONFIG_HOME", Path.home() / ".config"))
-    return base / "uncensored-llm" / "config.json"
+    return base / "local-llm" / "config.json"
 
 
 CONFIG_PATH = get_config_path()
 MODELS_PATH = Path(__file__).parent / "models.json"
 
-ASCII_ART = r"""                                                   _        _ _           
-                                                  | |      | | |          
- _   _ _ __   ___ ___ _ __  ___  ___  _ __ ___  __| |______| | |_ __ ___  
-| | | | '_ \ / __/ _ \ '_ \/ __|/ _ \| '__/ _ \/ _` |______| | | '_ ` _ \ 
-| |_| | | | | (_|  __/ | | \__ \ (_) | | |  __/ (_| |      | | | | | | | |
- \__,_|_| |_|\___\___|_| |_|___/\___/|_|  \___|\__,_|      |_|_|_| |_| |_|
-                                                                          
+ASCII_ART = r""" _                 _       _ _           
+| | ___   ___ __ _| |     | | |_ __ ___  
+| |/ _ \ / __/ _` | |_____| | | '_ ` _ \ 
+| | (_) | (_| (_| | |_____| | | | | | | |
+|_|\___/ \___\__,_|_|     |_|_|_| |_| |_|                                                                          
 """
 
 help_text = """Help:
