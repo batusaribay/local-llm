@@ -35,7 +35,7 @@ Run uncensored LLMs locally with Ollama.
 Requirements: [`uv`](https://docs.astral.sh/uv/)
 
 ```bash
-uv tool install git+https://github.com/batu-saribay/uncensored-llm
+uv tool install git+https://github.com/batusaribay/uncensored-llm
 ```
 
 ```bash
