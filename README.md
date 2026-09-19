@@ -1,6 +1,6 @@
 # local-llm
 
-A local LLM runner.
+Local LLM runner.
 
 ## How it works
 
